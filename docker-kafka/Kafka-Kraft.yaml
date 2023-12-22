@@ -94,7 +94,6 @@ services:
       
   KafkaWebUiService:
     image: provectuslabs/kafka-ui:latest
-    restart: always
     container_name: KafkaWebUiContainer
     ports:
       - '8086:8080'
