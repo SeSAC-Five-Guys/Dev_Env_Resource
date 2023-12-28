@@ -1,0 +1,5 @@
+[엘라스틱 서치]
+docker run -d --name elasticsearch -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" -e "xpack.license.self_generated.type=basic" -e "xpack.security.enabled=false" -e "xpack.security.authc.api_key.enabled=false" -v elasticsearch_data:/usr/share/elasticsearch/data docker.elastic.co/elasticsearch/elasticsearch:7.10.1
+
+[키바나]
+docker run -d --name kibana -p 5601:5601 -e "ELASTICSEARCH_URL=http://elasticsearch:9200" --link elasticsearch:elasticsearch docker.elastic.co/kibana/kibana:7.10.1
