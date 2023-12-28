@@ -14,7 +14,7 @@ services:
   Kafka-0:
     image: bitnami/kafka:3.4
     container_name: Kafka-0
-    # restart: unless-stopped
+    restart: no
     ports:
       - '10000:9094'
     environment:     
@@ -95,6 +95,7 @@ services:
   KafkaWebUiService:
     image: provectuslabs/kafka-ui:latest
     container_name: KafkaWebUiContainer
+    restart: no
     ports:
       - '8086:8080'
     environment:
